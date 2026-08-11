@@ -1,0 +1,104 @@
+# ============================================================
+# Embedded Controller with FPGA Co-Processor
+# ============================================================
+
+# ------------------------------------------------------------
+# Operating System / Editor Files
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# ------------------------------------------------------------
+# General Temporary / Backup Files
+# ------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.old
+*.log
+*.lock
+*.autosave
+
+# ------------------------------------------------------------
+# OrCAD / Cadence Generated Files
+# ------------------------------------------------------------
+*.opj.bak
+*.dsn.bak
+*.brd.bak
+*.sch.bak
+*.OLB.bak
+*.lck
+*.tmp
+*.log
+*.err
+
+# Cadence working / cache directories
+allegro.jrl
+allegro.log
+*.jrl
+
+# ------------------------------------------------------------
+# PSpice Generated Simulation Files
+# ------------------------------------------------------------
+*.out
+*.dat
+*.stl
+*.prb
+*.sim
+*.mif
+
+# ------------------------------------------------------------
+# STM32CubeIDE / Eclipse Generated Files
+# ------------------------------------------------------------
+Debug/
+Release/
+build/
+.settings/
+.metadata/
+*.launch
+
+# Compiled firmware
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+*.list
+*.lst
+
+# ------------------------------------------------------------
+# FPGA / Yosys / nextpnr / IceStorm Generated Files
+# ------------------------------------------------------------
+*.json
+*.asc
+*.bin
+*.blif
+
+# Simulation generated files
+*.vcd
+*.fst
+
+# Icarus Verilog output
+*.vvp
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ------------------------------------------------------------
+# Miscellaneous Generated Files
+# ------------------------------------------------------------
+*.zip
+*.7z
+*.rar
