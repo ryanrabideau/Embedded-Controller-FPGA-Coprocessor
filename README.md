@@ -8,6 +8,12 @@ This system is an FPGA-assisted data acquisition platform. The FPGA implements d
 
 The project was completed as a design, firmware, RTL, and simulation portfolio project. The PCB was not fabricated, so target-board hardware functionality has not been physically validated.
 
+### PCB Layout
+
+![PCB layout and DRC status](hardware/pcb/screenshots/pcb-drc-status.png)
+
+*Completed PCB layout showing top and bottom routing with 0 unrouted connections and 0 DRC errors.*
+
 ## Key Features
 
 - STM32F401 (LQFP64) – bare-metal / register-level firmware
