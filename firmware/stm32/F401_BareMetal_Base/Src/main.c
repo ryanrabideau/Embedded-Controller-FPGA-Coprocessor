@@ -136,9 +136,9 @@ void SDIO_Init(void)
     SDIO->POWER = 0x03;                     // Power ON
     for (volatile int i = 0; i < 2000; i++);
 
-    // Slow clock for initialization (~400 kHz)
-    // 84 MHz / (208 + 2) ≈ 400 kHz
-    SDIO->CLKCR = (208 << 0) |              // CLKDIV
+    // Slow clock for SD card initialization (~400 kHz)
+    // 48 MHz SDIO clock / (118 + 2) = 400 kHz
+    SDIO->CLKCR = (118 << 0) |              // CLKDIV
                   (1   << 8) |              // CLKEN
                   (0   << 11);              // 1-bit mode
 }
@@ -179,10 +179,16 @@ uint8_t SDIO_SendCommand(uint8_t cmd, uint32_t arg, uint8_t response_type)
         while (!(SDIO->STA & (SDIO_STA_CMDREND | SDIO_STA_CCRCFAIL | SDIO_STA_CTIMEOUT)) && --timeout);
         if (timeout == 0) return 1;
 
-        if (SDIO->STA & (SDIO_STA_CTIMEOUT | SDIO_STA_CCRCFAIL)) {
+        if (SDIO->STA & SDIO_STA_CTIMEOUT) {
             SDIO_ClearFlags();
             return 2;
         }
+
+        if ((SDIO->STA & SDIO_STA_CCRCFAIL) && cmd != 41) {
+            SDIO_ClearFlags();
+            return 2;
+        }
+
         SDIO->ICR = SDIO_STA_CMDREND | SDIO_STA_CCRCFAIL | SDIO_STA_CTIMEOUT;
     }
     return 0; // success
@@ -364,8 +370,18 @@ int main(void)
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
     GPIOA->MODER = (GPIOA->MODER & ~(3U << 10)) | (1U << 10);
 
-    // Simple SDIO test - send CMD0
+    // Attempt SD card initialization and report status over UART
     volatile uint8_t sd_status = SD_InitCard();
+    UART_SendString("SD init status: ");
+
+    if (sd_status < 10) {
+        UART_SendByte('0' + sd_status);
+    } else {
+        UART_SendByte('1');
+        UART_SendByte('0' + (sd_status - 10));
+    }
+
+    UART_SendString("\r\n");
     (void)sd_status;   // prevent unused-variable warning
 
     // ========== FPGA Test Sequence ==========
