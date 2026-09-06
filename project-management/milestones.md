@@ -19,29 +19,34 @@
 - [x] Complete schematic DRC
 
 ## Phase 4 — Power Simulation
-- [x] Perform PSpice analysis on key rails
+- [x] Perform simplified 3.3 V rail load-step analysis in PSpice
+- [x] Document load-step assumptions and simulation results
 - [x] Document power tree and decoupling strategy
 
 ## Phase 5 — PCB Layout
 - [x] Define 4-layer stackup
-- [x] Calculate and constrain 50 Ω microstrip
+- [x] Calculate and constrain 50 Ω single-ended microstrip routing target
 - [x] Place components
 - [x] Route high-speed interfaces (SDIO + MCU to FPGA bus)
 - [x] Apply series termination
-- [x] Complete layout DRC
+- [x] Complete layout DRC with 0 unrouted connections and 0 DRC errors
 
 ## Phase 6 — Firmware
 - [x] Bare-metal clock and timer foundation
 - [x] UART driver (register-level)
-- [x] Register-level SDIO initialization sequence
-- [x] MCU ↔ FPGA communication driver
+- [x] Verify UART output at 115200 baud
+- [x] Implement register-level SDIO initialization sequence
+- [x] Implement MCU to FPGA synchronous 4-bit interface driver
 
 ## Phase 7 — FPGA / RTL
-- [x] Parallel Data Capture Engine (Verilog)
-- [x] Testbench
-- [x] Simulation waveforms (GTKWave)
+- [x] Implement Parallel Data Capture Engine in Verilog
+- [x] Create self-checking testbench
+- [x] Verify RTL simulation using Icarus Verilog
+- [x] Inspect simulation waveforms using GTKWave
 
 ## Phase 8 — Documentation & Repository
-- [x] Top-level README updated to completed status
-- [x] Project management status files updated
-- [x] Additional technical documentation and assets
+- [x] Update top-level README
+- [x] Add schematic and PCB design evidence
+- [x] Add FPGA verification evidence
+- [x] Add PSpice analysis and results
+- [x] Document architecture, current status, and project limitations
