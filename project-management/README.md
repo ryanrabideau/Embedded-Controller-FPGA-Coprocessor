@@ -4,6 +4,6 @@ This folder contains the planning and status documentation for the Embedded Cont
 
 ## Contents
 
-- **requirements.md** – Original system, functional, PCB, power, firmware, and documentation requirements
+- **requirements.md** – Final system, functional, PCB, power, firmware, FPGA, documentation, and validation requirements
 - **current-status.md** – Final project status
 - **milestones.md** – High-level completion checklist
