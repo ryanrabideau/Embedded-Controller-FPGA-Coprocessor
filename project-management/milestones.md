@@ -26,7 +26,7 @@
 - [x] Define 4-layer stackup
 - [x] Calculate and constrain 50 Ω microstrip
 - [x] Place components
-- [x] Route high-speed interfaces (SDIO + MCU–FPGA bus)
+- [x] Route high-speed interfaces (SDIO + MCU to FPGA bus)
 - [x] Apply series termination
 - [x] Complete layout DRC
 
