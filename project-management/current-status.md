@@ -26,13 +26,13 @@ All major engineering deliverables for the Embedded Controller with FPGA Co-Proc
 
 - The PCB was not fabricated, so the complete system has not undergone physical board-level bring-up or end-to-end hardware validation
 - SDIO initialization firmware was implemented but has not been validated with the target microSD hardware
-- The MCU-to-FPGA interface was implemented in firmware and RTL but has not been physically validated between the target devices
+- The MCU to FPGA interface was implemented in firmware and RTL but has not been physically validated between the target devices
 - Strict ±10 mil length matching was not fully enforced; routing was considered sufficient for the intended interface speeds
 
 ## Future Work
 
 - Fabricate and assemble the PCB
 - Perform board bring-up and power-rail measurements
-- Validate MCU-to-FPGA communication on physical hardware
+- Validate MCU to FPGA communication on physical hardware
 - Validate microSD initialization and implement block-level read/write functionality
 - Expand FPGA functionality beyond the current parallel capture proof of concept
