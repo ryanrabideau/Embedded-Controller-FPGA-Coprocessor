@@ -18,12 +18,12 @@ This system is an FPGA-assisted data acquisition platform. The FPGA performs det
 
 ## Repository Structure
 
-- Hardware/ — Schematic, PCB, BOM, stackup
-- Firmware/ — STM32 bare-metal project
-- FPGA/ — Verilog RTL + testbench + waveforms
-- Simulation/ — PSpice power integrity results
-- Docs/ — Architecture, SI/PI notes, design decisions
-- Project Management/
+- [`hardware/`](hardware/) — Schematic, PCB layout, stackup, and design evidence
+- [`firmware/`](firmware/) — STM32F401 bare-metal firmware
+- [`fpga/`](fpga/) — Verilog RTL, self-checking testbench, and simulation results
+- [`simulation/`](simulation/) — PSpice power-rail analysis and results
+- [`docs/`](docs/) — System architecture and technical documentation
+- [`project-management/`](project-management/) — Requirements, milestones, and project status
 
 ## Tools Used
 
