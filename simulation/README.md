@@ -1,13 +1,29 @@
 # Simulation
 
-PSpice simulation files and results used to validate the board's power architecture.
+PSpice analysis used to evaluate the 3.3 V power rail under a transient load condition.
 
-Planned analyses include:
+## 3.3 V Load-Step Analysis
 
-- 3.3 V rail behavior
-- 1.2 V FPGA core rail behavior
-- LDO startup response
-- Load-step response
-- Overshoot and undershoot
-- Settling time
-- Rail stability
+A simplified power-rail model was created to evaluate voltage droop when the load current increases from 20 mA to 200 mA.
+
+The model includes:
+
+- 3.3 V source
+- 0.2 Ω equivalent source impedance
+- 10 µF output capacitance
+- Pulsed 20 mA to 200 mA load
+- 10 µs load transition time
+
+The simulation produced approximately 36 mV of voltage droop during the load step, with the rail recovering when the load returned to 20 mA.
+
+This is a simplified rail-level model intended for transient power-integrity analysis. It is not a transistor-level or manufacturer-model simulation of the AMS1117 regulator.
+
+## Results
+
+- [`3.3 V Load-Step Analysis`](results/3v3-load-step-analysis.md)
+- [`Load-Step Waveform`](results/3v3-load-step-waveform.png)
+
+## Tools
+
+- OrCAD Capture
+- PSpice
