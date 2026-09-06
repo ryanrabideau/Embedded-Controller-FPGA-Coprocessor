@@ -4,17 +4,20 @@ A 4-layer embedded controller integrating an STM32F401 microcontroller, Lattice 
 
 ## Project Overview
 
-This system is an FPGA-assisted data acquisition platform. The FPGA performs deterministic parallel data capture and buffering, while the STM32 handles system control, MCU to FPGA communication, higher-level processing, and microSD storage.
+This system is an FPGA-assisted data acquisition platform. The FPGA implements deterministic parallel data capture and buffering, while the STM32 handles system control, the synchronous MCU to FPGA interface, higher-level processing, and the microSD SDIO interface.
+
+The project was completed as a design, firmware, RTL, and simulation portfolio project. The PCB was not fabricated, so target-board hardware functionality has not been physically validated.
 
 ## Key Features
 
-- STM32F401 (LQFP) – bare-metal / register-level firmware
+- STM32F401 (LQFP64) – bare-metal / register-level firmware
 - Lattice iCE40UP5K – Parallel Data Capture Engine (Verilog)
 - 4-bit SDIO microSD interface
-- 4-layer PCB with controlled-impedance routing
-- Multi-rail power (3.3 V + 1.2 V) with PSpice analysis
-- Source series termination and return-path aware layout
-- MCU to FPGA synchronous 4-bit interface with interrupt
+- 4-layer PCB with 50 Ω controlled-impedance routing target
+- Multi-rail power architecture (3.3 V + 1.2 V)
+- Simplified 3.3 V rail load-step analysis in PSpice
+- 22 Ω source series termination and return-path-aware layout
+- MCU to FPGA synchronous 4-bit interface with FPGA interrupt signaling
 
 ## Repository Structure
 
@@ -46,12 +49,12 @@ This system is an FPGA-assisted data acquisition platform. The FPGA performs det
 
 - 4-layer PCB design and stackup definition
 - Controlled impedance (50 Ω microstrip) calculation and constraint setup
-- Signal integrity fundamentals (return path, termination, length matching considerations)
+- Signal integrity fundamentals (return paths, source termination, and trace-length considerations)
 - Multi-rail power architecture and basic power integrity analysis (PSpice)
 - Schematic capture and netlist management in OrCAD
 - Bare-metal / register-level STM32 firmware development
-- SDIO peripheral driver development
+- Register-level SDIO initialization
 - FPGA RTL design in Verilog
-- Testbench writing and simulation (Icarus Verilog + GTKWave)
+- Self-checking testbench development and simulation (Icarus Verilog + GTKWave)
 - MCU to FPGA hardware/software co-design and interfacing
-- Professional documentation and repository organization for portfolio use
+- Technical documentation and repository organization
