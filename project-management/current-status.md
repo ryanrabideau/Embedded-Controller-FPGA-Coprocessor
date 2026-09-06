@@ -15,8 +15,9 @@ All major engineering deliverables for the Embedded Controller with FPGA Co-Proc
 - Series termination and return-path considerations implemented
 - PSpice power-rail analysis performed
 - Bare-metal STM32 firmware foundation (clock, timer, UART, GPIO)
+- UART output was verified successfully at 115200 baud after correcting the USART2 baud-rate configuration for the 42 MHz APB1 clock
 - Register-level SDIO initialization sequence
-- MCU ↔ FPGA 4-bit interface driver
+- MCU to FPGA 4-bit interface driver
 - FPGA Parallel Data Capture Engine written in Verilog
 - FPGA testbench + simulation waveforms (Icarus Verilog / GTKWave)
 - Top-level repository documentation updated to completed status
@@ -24,7 +25,6 @@ All major engineering deliverables for the Embedded Controller with FPGA Co-Proc
 ## Known Limitations
 
 - Strict ±10 mil length matching was not fully enforced (acceptable for the interface speeds used)
-- Live UART output on the development Nucleo board became unreliable (hardware/ST-Link VCP issue); code remains correct
 - Board was not fabricated (design-only project)
 
 ## Next Actions (Optional)
