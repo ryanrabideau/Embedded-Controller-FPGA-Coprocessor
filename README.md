@@ -50,6 +50,14 @@ The Parallel Data Capture Engine was verified using a self-checking Verilog test
 
 *Simulation waveform showing parallel data capture and FPGA interrupt behavior.*
 
+### Power Integrity Analysis
+
+A simplified PSpice load-step model was used to evaluate the 3.3 V rail under a 20 mA to 200 mA transient load. The simulation produced approximately 36 mV of voltage droop.
+
+![3.3 V rail load-step waveform](simulation/results/3v3-load-step-waveform.png)
+
+*PSpice load-step simulation of the 3.3 V rail.*
+
 ## Results Summary
 
 - Completed 4-layer schematic and PCB layout with 0 unrouted connections and 0 DRC errors
