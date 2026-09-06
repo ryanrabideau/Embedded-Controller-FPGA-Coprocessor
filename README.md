@@ -4,7 +4,7 @@ A 4-layer embedded controller integrating an STM32F401 microcontroller, Lattice 
 
 ## Project Overview
 
-This system is an FPGA-assisted data acquisition platform. The FPGA performs deterministic parallel data capture and buffering, while the STM32 handles system control, MCU–FPGA communication, higher-level processing, and microSD storage.
+This system is an FPGA-assisted data acquisition platform. The FPGA performs deterministic parallel data capture and buffering, while the STM32 handles system control, MCU to FPGA communication, higher-level processing, and microSD storage.
 
 ## Key Features
 
@@ -53,5 +53,5 @@ This system is an FPGA-assisted data acquisition platform. The FPGA performs det
 - SDIO peripheral driver development
 - FPGA RTL design in Verilog
 - Testbench writing and simulation (Icarus Verilog + GTKWave)
-- MCU–FPGA hardware/software co-design and interfacing
+- MCU to FPGA hardware/software co-design and interfacing
 - Professional documentation and repository organization for portfolio use
