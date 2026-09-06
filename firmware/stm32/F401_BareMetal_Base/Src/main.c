@@ -82,7 +82,7 @@ void UART_Init(void)
     GPIOA->AFR[0] &= ~(0xFF << 8);
     GPIOA->AFR[0] |=  (7 << 8) | (7 << 12);
 
-    USART2->BRR = 729;  // 115200 @ 84 MHz
+    USART2->BRR = 365;  // 115200 baud @ 42 MHz APB1 clock
     USART2->CR1 = USART_CR1_UE | USART_CR1_TE | USART_CR1_RE;
 }
 
@@ -352,6 +352,8 @@ int main(void)
     SystemClock_Config();
     Timer_Init();
     UART_Init();
+
+    UART_SendString("UART test\r\n");
 
     SDIO_GPIO_Init();
     SDIO_Init();
