@@ -27,17 +27,9 @@ This corresponds to approximately 36 mV of load-step droop.
 
 The result is consistent with the simplified source-impedance model:
 
-\[
-\Delta V = \Delta I \times R
-\]
+**Voltage droop = Change in current × Source impedance**
 
-\[
-\Delta V = (0.20 - 0.02)\text{ A} \times 0.2\ \Omega
-\]
-
-\[
-\Delta V \approx 36\text{ mV}
-\]
+**Voltage droop = (0.20 A - 0.02 A) × 0.2 Ω = 0.036 V ≈ 36 mV**
 
 The rail returns to its original level when the load decreases.
 
