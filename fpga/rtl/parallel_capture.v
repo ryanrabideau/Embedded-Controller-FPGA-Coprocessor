@@ -6,7 +6,7 @@ module parallel_capture (
     output reg         irq
 );
 
-    // 16-deep × 4-bit buffer
+    // 16-deep x 4-bit buffer
     reg [3:0] buffer [0:15];
     reg [3:0] wr_ptr;
     reg [4:0] count;
@@ -19,22 +19,23 @@ module parallel_capture (
         end
         else begin
             if (!cs_n) begin
-                // Capture data
+                // Capture one 4-bit sample on each rising clock edge
                 buffer[wr_ptr] <= data_in;
                 wr_ptr <= wr_ptr + 1'b1;
 
+                // Saturate count at the 16-sample buffer depth
                 if (count < 5'd16)
                     count <= count + 1'b1;
 
-                // Raise interrupt once we have at least 8 samples
-                if (count >= 5'd7)      // will become 8 after this write
+                // Assert IRQ when the 8th sample is captured
+                if (count >= 5'd7)
                     irq <= 1'b1;
             end
             else begin
-                // When CS is released, clear interrupt and optionally reset count
-                irq   <= 1'b0;
-                // Uncomment the next line if you want the buffer to clear when CS goes high
-                // count <= 5'd0;
+                // End of capture session: clear state for next transaction
+                wr_ptr <= 4'd0;
+                count  <= 5'd0;
+                irq    <= 1'b0;
             end
         end
     end
