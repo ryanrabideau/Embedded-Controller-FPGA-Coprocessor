@@ -1,13 +1,19 @@
 # Hardware
 
-This directory contains the electrical design files for the Embedded Controller with FPGA Co-Processor.
+This folder contains the hardware design files and documentation for the Embedded Controller with FPGA Co-Processor.
 
 ## Contents
 
-- `schematic/` — OrCAD Capture schematic source and exported schematics
-- `pcb/` — OrCAD PCB Editor board files, stackup information, and layout documentation
-- `libraries/` — Project-specific schematic symbols and PCB footprints
-- `bom/` — Bill of materials and manufacturer part information
-- `manufacturing/` — Fabrication and assembly outputs when available
+- **schematic/** – OrCAD schematic source and exports
+- **pcb/** – PCB layout, stackup definition, and screenshots
+- **libraries/** – Custom symbols and footprints (if exported)
+- **bom/** – Bill of materials and critical component notes
 
-> Hardware development is currently in progress.
+## Design Summary
+
+- 4-layer FR-4 PCB
+- STM32F401 + Lattice iCE40UP5K + microSD (4-bit SDIO)
+- Controlled-impedance routing (50 Ω microstrip target)
+- Multi-rail power (3.3 V and 1.2 V)
+- Source series termination on key interfaces
+- Continuous ground plane and return-path aware layout
