@@ -42,6 +42,14 @@ The project was completed as a design, firmware, RTL, and simulation portfolio p
 - Icarus Verilog + GTKWave
 - Git / GitHub
 
+### FPGA Verification
+
+The Parallel Data Capture Engine was verified using a self-checking Verilog testbench with Icarus Verilog. GTKWave was used to inspect the simulated capture and interrupt behavior.
+
+![FPGA parallel capture and interrupt waveform](fpga/waveforms/parallel-capture-irq-waveform.png)
+
+*Simulation waveform showing parallel data capture and FPGA interrupt behavior.*
+
 ## Results Summary
 
 - Completed 4-layer schematic and PCB layout with 0 unrouted connections and 0 DRC errors
