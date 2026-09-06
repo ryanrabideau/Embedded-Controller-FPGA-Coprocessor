@@ -35,12 +35,12 @@ This system is an FPGA-assisted data acquisition platform. The FPGA performs det
 
 ## Results Summary
 
-- Complete 4-layer schematic and layout
-- 50 Ω microstrip impedance calculated and constrained
-- Register-level SDIO initialization sequence
-- Working MCU to FPGA 4-bit communication
-- FPGA Parallel Capture module simulated with waveforms
-- Power-rail transient analysis performed in PSpice
+- Completed 4-layer schematic and PCB layout with 0 unrouted connections and 0 DRC errors
+- Calculated and constrained 50 Ω single-ended routing for SDIO and MCU to FPGA interfaces
+- Implemented STM32 register-level UART, SDIO initialization, and MCU to FPGA interface firmware
+- Implemented and verified the FPGA Parallel Data Capture Engine using a self-checking Verilog testbench
+- Simulated a simplified 3.3 V rail load step in PSpice, showing approximately 36 mV of voltage droop from a 20 mA to 200 mA load transition
+- Documented PCB stackup, schematics, routing, FPGA verification, and power-rail analysis
 
 ## Skills Covered
 
