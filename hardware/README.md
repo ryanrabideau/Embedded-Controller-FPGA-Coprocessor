@@ -37,6 +37,7 @@ PCB design documentation and routing evidence:
 - [`PCB Stackup`](pcb/stackup.md)
 - [`Top-Layer Routing`](pcb/screenshots/pcb-top-routing.png)
 - [`Bottom-Layer Routing`](pcb/screenshots/pcb-bottom-routing.png)
+- [`Combined Routing`](pcb/screenshots/pcb-combined-routing.png)
 - [`PCB DRC Status`](pcb/screenshots/pcb-drc-status.png)
 
 The completed layout contains 47 placed components, 0 unrouted connections, and 0 DRC errors.
