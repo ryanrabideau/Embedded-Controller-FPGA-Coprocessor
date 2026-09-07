@@ -10,9 +10,9 @@ The project was completed as a design, firmware, RTL, and simulation portfolio p
 
 ### PCB Layout
 
-![PCB layout and DRC status](hardware/pcb/screenshots/pcb-drc-status.png)
+![Completed PCB layout with top and bottom routing](hardware/pcb/screenshots/pcb-combined-routing.png)
 
-*Completed PCB layout showing top and bottom routing with 0 unrouted connections and 0 DRC errors.*
+*Completed four-layer PCB layout showing the combined top- and bottom-layer routing.*
 
 ## Key Features
 
